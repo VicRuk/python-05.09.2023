@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIVERSO HERÓIS</title>
+</head>
+<body>
+    {% if universo == "dc" and heroi == "batman" %}
+        O universo escolhido é a {{ universo }}.<br>
+        E o héroi escolhido é o {{ heroi }}.<br>
+        <img src="{{ url_for('static', filename='batman.png') }}" width="200"><br>
+    {% elif universo == "dc" and heroi != "batman" %}
+        O universo escolhido é a {{ universo }}.<br>
+        E o héroi escolhido é o {{ heroi }}.<br>
+        Mas não temos uma imagem dele.
+
+
+    {% elif universo == "marvel" and heroi == "miles" %}
+        O universo escolhido é a {{ universo }}.<br>
+        E o héroi escolhido é o {{ heroi }}.<br>
+        <img src="{{ url_for('static', filename='miles.png') }}" width="200"><br>
+    {% elif universo == "marvel" and heroi != "miles" %}
+        O universo escolhido é a {{ universo }}.<br>
+        E o héroi escolhido é o {{ heroi }}.<br>
+        Mas não temos uma imagem dele.
+
+    {% else %}
+        Isso não existe pq somos limitados :(
+    {% endif %}
+</body>
+</html>
